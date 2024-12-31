@@ -1,0 +1,113 @@
+/* Genel stil ayarları */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Açık gri zemin */
+    color: #333; /* Koyu yazı rengi */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    background-color: #fff; /* Beyaz arka plan */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd; /* İnce gri kenarlık */
+    max-width: 800px;
+}
+
+.title {
+    text-align: center;
+    color: #e74c3c; /* Koyu kırmızı başlık */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Elemanlar arasına mesafe */
+}
+
+label {
+    font-size: 1rem;
+    color: #333; /* Koyu gri yazı rengi */
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    padding: 10px 0;
+}
+
+input:focus {
+    border-color: #e74c3c; /* Kırmızı odaklanma kenarlığı */
+    background-color: #fff;
+    outline: none;
+}
+
+button.submit-btn {
+    padding: 15px;
+    background-color: #e74c3c; /* Koyu kırmızı buton */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+button.submit-btn:hover {
+    background-color: #c0392b; /* Hover durumunda koyu kırmızı */
+}
+
+button.submit-btn:active {
+    background-color: #a93226; /* Tıklama efekti */
+    transform: scale(0.98); /* Buton tıklanırken küçülme */
+}
+
+form .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+form .form-row label {
+    width: 48%;
+}
+
+form .form-row input {
+    width: 48%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-row label, .form-row input {
+        width: 100%;
+    }
+}

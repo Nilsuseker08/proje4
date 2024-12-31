@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Pırlanta - Zen Pırlanta Fırsatları Online Mağazada</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=headset_mic" />
+    
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            
+            width: 100%;
+            background-color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        header img {
+            margin-top: 5px;
+            margin-left: 100px;
+            height: 50px;
+        }
+
+        header .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 60px;
+        }
+
+        header .contact-info span {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        .form-container {
+            width: 400px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .form-container:hover {
+            transform: scale(1.02);
+        }
+
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .form-header label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+            cursor: pointer;
+        }
+
+        .form-header input[type="radio"] {
+            display: none;
+        }
+
+        .form-header label.active {
+            color: #8b0000;
+            font-weight: 700;
+            border-bottom: 2px solid #8b0000;
+        }
+
+        .form-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="text"],
+        input[type="tel"] {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="text"]:focus,
+        input[type="tel"]:focus {
+            border-color: #8b0000;
+        }
+
+        .forgot-password {
+            font-size: 13px;
+            color: #8b0000;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            padding: 12px;
+            background-color: #8b0000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #a00000;
+        }
+
+        label {
+            font-size: 13px;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+
+        label input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        small.input-note {
+            font-size: 12px;
+            color: #777;
+        }
+        footer {
+            
+            width: 100%;
+            background-color: #ffffff; /* Beyaz arka plan */
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+            color: #333; /* Zarif bir koyu gri yazı rengi */
+            font-family: 'Georgia', serif; /* Zarif serif yazı tipi */
+            margin-top: 50px; /* İçerikle arasına boşluk */
+        }
+
+footer img {
+    height: 20px; /* Logo boyutu */
+    margin-top: 15px;
+    margin-left: 25px;
+}
+
+footer .footer-menu {
+    display: flex;
+    gap: 25px; /* Menü elemanları arası boşluk */
+    font-size: 14px; /* Zarif ve okunaklı yazı boyutu */
+}
+
+footer .footer-menu a {
+    text-decoration: none;
+    color: #555; /* Orta koyulukta gri */
+    transition: color 0.3s ease, transform 0.3s ease; /* Geçiş efektleri */
+}
+
+footer .footer-menu a:hover {
+    color: #8b0000; /* Lüks bir kırmızı tonu */
+    transform: scale(1.1); /* Hafif büyüme efekti */
+}
+
+footer span {
+    font-size: 12px; /* Daha küçük ve zarif metin */
+    text-align: center;
+    color: #777; /* Açık gri */
+    line-height: 1.6;
+    max-width: 400px; /* Uzun metin için sınırlı genişlik */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo-new.webp" alt="Zen Pırlanta Logo">
+        <div class="contact-info">
+            <span class="material-symbols-outlined" style="font-size: 45px;">
+                headset_mic
+                </span>
+            <span> 444 7 911 | Hafta içi 08:00-20:00</span>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="form-header">
+                <label class="active" data-target="giris-section">Giriş Yap</label>
+                <label data-target="uye-section">Üye Ol</label>
+            </div>
+
+            <div id="giris-section" class="form-section">
+                <input type="email" placeholder="E-Posta" required>
+                <input type="password" placeholder="Şifre" required>
+                <a href="#" class="forgot-password">Şifremi Unuttum!</a>
+                <button type="submit" class="button">Giriş</button>
+            </div>
+
+            <div id="uye-section" class="form-section hidden">
+                <input type="text" placeholder="Adınız" required>
+                <input type="text" placeholder="Soyadınız" required>
+                <input type="email" placeholder="E-Posta Adresiniz" required>
+                <input type="password" placeholder="Şifre" required>
+                <input type="password" placeholder="Şifre Tekrarı" required>
+                <small class="input-note">En az 6 karakter</small>
+                <input type="tel" placeholder="GSM Numaranız" required>
+                <small class="input-note">(5**********)</small>
+                <input type="text" placeholder="TC Kimlik Nonuz" required>
+                <label>
+                    <input type="checkbox"> Kampanyalardan haberdar olmak için elektronik ileti almak istiyorum.
+                </label>
+                <label>
+                    <input type="checkbox" required> Üyelik sözleşmesi'ni okudum onayladım.
+                </label>
+                <label>
+                    <input type="checkbox" required> Kişisel verileriniz, Aydınlatma Metni kapsamında işlenmektedir. Aydınlatma metnini okudum ve içeriğini anladım.
+                </label>
+                <button type="submit" class="button">Kayıt</button>
+            </div>
+        </div>
+    </main><br><br><br><br><br>
+
+    <footer>
+        <div>
+            <img src="img/logo-new.webp" alt="Zen Pırlanta Logo">
+            <span>Copyright © 2024, Zen Diamond tescilli markadır. Zen Diamond Birleşmiş Markalar Derneği ve Turquality Destek Programı üyesidir.</span>
+        </div>
+        <div class="footer-menu">
+            <a href="#">Crealive</a>
+            <a href="#">Kullanım Şartları</a>
+            <a href="#">Gizlilik İlkeleri</a>
+            <a href="#">Güvenlik Politikası</a>
+            <a href="#">Çerez Politikası</a>
+        </div>
+    </footer>
+
+    <script>
+        const labels = document.querySelectorAll('.form-header label');
+        const sections = document.querySelectorAll('.form-section');
+
+        labels.forEach(label => {
+            label.addEventListener('click', () => {
+                labels.forEach(l => l.classList.remove('active'));
+                label.classList.add('active');
+
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                document.getElementById(label.dataset.target).classList.remove('hidden');
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

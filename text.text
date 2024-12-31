@@ -1,0 +1,26 @@
+bir ürün tablosu oluştur içerisinde
+-id
+-tag
+-isim
+-fiyat
+-indirim
+-üyelere özel
+-taksitli fiyat 
+-resim olsun 
+
+bir kullanıcı tablosu oluştur içerisinde 
+-id 
+-isim 
+-soyisim
+-e-posta
+-şifre
+-gsm numara
+-tc no 
+-sepet 
+-favori ürünlerin saklanması için 
+-siparişler 
+
+
+
+
+
